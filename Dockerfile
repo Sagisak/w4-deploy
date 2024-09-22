@@ -18,9 +18,12 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the correct port for Nuxt (default is 3000)
+# Build the application for production
+RUN npm run build
+
+# Expose the port that Nuxt serves on (default is 3000)
 EXPOSE 3000
 
-# Start the Nuxt development server
-CMD ["npm", "run", "dev"]
+# Start the Nuxt application
+CMD ["npm", "run", "start"]
 
