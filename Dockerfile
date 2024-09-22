@@ -15,14 +15,18 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install PM2 globally
+RUN npm install -g pm2
+
 # Copy the rest of the application code
 COPY . .
 
 # Build the application for production
 RUN npm run build
 
-# Expose the port that Nuxt serves on (default is 3000)
+# Expose the port that Nuxt serves on (default is 80 now)
 EXPOSE 80
 
-CMD ["node", ".output/server/index.mjs"]
+# Start the application using PM2
+CMD ["pm2-runtime", "start", ".output/server/index.mjs", "--name", "nuxt-app"]
 
