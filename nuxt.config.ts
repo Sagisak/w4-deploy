@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
+
   runtimeConfig: {
     // Make environment variables accessible here
     public: {
@@ -11,4 +12,10 @@ export default defineNuxtConfig({
       // Add more environment variables as needed
     },
   },
+
+  // Move the server configuration here
+  server: {
+    host: '0.0.0.0', // Listen on both IPv4 and IPv6
+    port: 3000        // Ensure the port matches your Docker settings
+  }
 })
