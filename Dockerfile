@@ -24,6 +24,5 @@ RUN npm run build
 # Expose the port that Nuxt serves on (default is 3000)
 EXPOSE 3000
 
-# Start the Nuxt application
-CMD ["npm", "run", "start"]
+CMD ["node", "./server/index.mjs"]
 
