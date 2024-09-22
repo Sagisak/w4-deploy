@@ -28,5 +28,5 @@ RUN npm run build
 EXPOSE 80
 
 # Start the application using PM2
-CMD ["pm2", "start", "ecosystem.config.cjs"]
+CMD ["pm2-runtime", "ecosystem.config.cjs"]
 
