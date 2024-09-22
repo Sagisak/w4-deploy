@@ -22,7 +22,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that Nuxt serves on (default is 3000)
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["node", ".output/server/index.mjs"]
 
