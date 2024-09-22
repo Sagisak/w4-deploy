@@ -1,15 +1,10 @@
 FROM node:20 AS base
 
-### <JANGAN DIGANTI>
 ARG STUDENT_NAME
 ARG STUDENT_NIM
 
 ENV NUXT_STUDENT_NAME ${STUDENT_NAME}
 ENV NUXT_STUDENT_NIM ${STUDENT_NIM}
-
-### </JANGAN DIGANTI>
-
-# TODO: code disini
 
 # Set the working directory in the container
 WORKDIR /app
@@ -23,8 +18,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port that Vite runs on (default is 5173)
-EXPOSE 5173
+# Expose the correct port for Nuxt (default is 3000)
+EXPOSE 3000
 
-# Start the Vite development server
+# Start the Nuxt development server
 CMD ["npm", "run", "dev"]
+
