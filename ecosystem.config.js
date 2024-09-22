@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   apps: [
     {
       name: 'App',
@@ -9,3 +9,4 @@ module.exports = {
     }
   ]
 }
+
