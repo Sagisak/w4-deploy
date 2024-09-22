@@ -2,10 +2,13 @@ module.exports = {
   apps: [
     {
       name: 'App',
-      port: '80',
+      script: './.output/server/index.mjs',
       exec_mode: 'cluster',
       instances: 'max',
-      script: './.output/server/index.mjs'
+      env: {
+        PORT: 80,
+        HOST: '0.0.0.0'  // Ensure it binds to all network interfaces
+      }
     }
   ]
 }
