@@ -16,7 +16,7 @@ COPY package*.json ./
 RUN npm install
 
 # Install PM2 globally
-RUN npm install -g pm2
+RUN npm install pm2@latest -g
 
 # Copy the rest of the application code
 COPY . .
@@ -28,5 +28,5 @@ RUN npm run build
 EXPOSE 80
 
 # Start the application using PM2
-CMD ["pm2-runtime", "start", ".output/server/index.mjs", "--name", "nuxt-app"]
+CMD ["pm2", "start", "ecosystem.config.js"]
 
