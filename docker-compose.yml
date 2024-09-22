@@ -5,5 +5,4 @@ services:
       args:
         STUDENT_NAME: "Leonardo Tyoes Huibu"
         STUDENT_NIM: "00000065503"
-    ports:
-      # TODO
+    ports: 5173:5173
