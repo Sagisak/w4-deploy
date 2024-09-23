@@ -12,11 +12,14 @@ export default defineNuxtConfig({
       // Add more environment variables as needed
     },
   },
- nitro: {
+ // nuxt.config.ts
+export default defineNuxtConfig({
+  nitro: {
     preset: 'node-server'
   },
   server: {
-    port: 3000,  // Ensure this matches the PM2 config
-    host: '0.0.0.0'  // Allows external access
+    host: process.env.NITRO_HOST || '0.0.0.0', // Ensure it's set to 0.0.0.0
+    port: process.env.NITRO_PORT || 3000        // Default to 3000, can be overridden
   }
 });
+

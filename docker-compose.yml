@@ -8,5 +8,5 @@ services:
         STUDENT_NAME: "Leonardo Tyoes Huibu"
         STUDENT_NIM: "00000065503"
     ports:
-      - "3000:3000"  # Map container port 3000 to host port 3000
+      - "80:80"  # Map container port 3000 to host port 3000
 
