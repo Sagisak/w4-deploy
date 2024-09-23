@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   // Move the server configuration here
   server: {
-    host: '4.237.68.218', // Listen on both IPv4 and IPv6
+    host: '0.0.0.0', // Listen on both IPv4 and IPv6
     port: 80        // Ensure the port matches your Docker settings
   }
 })
