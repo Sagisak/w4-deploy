@@ -18,7 +18,7 @@ export default defineNuxtConfig({
     preset: 'node-server'
   },
   server: {
-    host: process.env.NITRO_HOST || '0.0.0.0', // Ensure it's set to 0.0.0.0
+     host: '0.0.0.0',
     port: process.env.NITRO_PORT || 3000        // Default to 3000, can be overridden
   }
 });

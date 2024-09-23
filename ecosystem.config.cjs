@@ -7,13 +7,13 @@ module.exports = {
       instances: 'max',
       exec_mode: 'cluster',
       env: {
-        NITRO_HOST: '0.0.0.0', // Ensure it's set to 0.0.0.0
-        NITRO_PORT: '80',       // Set to 80 for HTTP
+        NITRO_HOST: '0.0.0.0',
+        NITRO_PORT: '3000',
         NODE_ENV: 'production'
       },
       env_production: {
         NITRO_HOST: '0.0.0.0',
-        NITRO_PORT: '80',
+        NITRO_PORT: '3000',
         NODE_ENV: 'production'
       }
     }
