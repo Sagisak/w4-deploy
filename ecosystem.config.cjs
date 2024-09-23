@@ -1,15 +1,18 @@
 module.exports = {
   apps: [
     {
-      name: 'App',
-      script: './.output/server/index.mjs',
-      exec_mode: 'cluster',
-      instances: 'max',
+      name: 'nuxt-app',
+      script: '.output/server/index.mjs',
       env: {
-        PORT: 80,
-        HOST: '0.0.0.0'  // Ensure it binds to all network interfaces
-      }
-    }
-  ]
-}
+        NUXT_HOST: '0.0.0.0',  // Listen on all interfaces, including public IP
+        NUXT_PORT: '80',        // Set port to 80 (or 3000 if needed)
+      },
+      env_production: {
+        NODE_ENV: 'production',
+        NUXT_HOST: '0.0.0.0',  // Still listen on all interfaces in production
+        NUXT_PORT: '80',        // Set production port to 80
+      },
+    },
+  ],
+};
 

@@ -6,7 +6,7 @@ ARG STUDENT_NIM
 ENV NUXT_STUDENT_NAME ${STUDENT_NAME}
 ENV NUXT_STUDENT_NIM ${STUDENT_NIM}
 
-# Set the working directory in the container
+# Set the working directory in the containerS
 WORKDIR /app
 
 # Copy package.json and package-lock.json first (for efficient caching)
@@ -25,7 +25,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that Nuxt serves on (default is 80 now)
-EXPOSE 3000
+EXPOSE 80
 
 # Start the application using PM2
 CMD ["pm2-runtime", "ecosystem.config.cjs"]
