@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   my-app:
     build:
@@ -6,5 +8,5 @@ services:
         STUDENT_NAME: "Leonardo Tyoes Huibu"
         STUDENT_NIM: "00000065503"
     ports:
-      - "80:80"  
+      - "3000:3000"  # Map container port 3000 to host port 3000
 

@@ -12,10 +12,11 @@ export default defineNuxtConfig({
       // Add more environment variables as needed
     },
   },
-
-  // Move the server configuration here
+ nitro: {
+    preset: 'node-server'
+  },
   server: {
-    host: '0.0.0.0', // Listen on both IPv4 and IPv6
-    port: 80        // Ensure the port matches your Docker settings
+    port: 3000,  // Ensure this matches the PM2 config
+    host: '0.0.0.0'  // Allows external access
   }
-})
+});

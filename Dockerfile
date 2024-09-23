@@ -21,9 +21,12 @@ COPY . .
 # Build the application for production
 RUN npm run build
 
-# Expose the port that Nuxt serves on (port 80 for HTTP)
+# Install PM2 globally
+RUN npm install -g pm2
+
+# Expose the port that Nuxt serves on (default is 3000)
 EXPOSE 3000
 
-# Start the Nuxt application in production mode
-CMD ["node", ".output/server/index.mjs"]
+# Use PM2 to start the application
+CMD ["pm2-runtime", "ecosystem.config.cjs"]
 
