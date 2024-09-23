@@ -22,7 +22,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that Nuxt serves on (port 80 for HTTP)
-EXPOSE 80
+EXPOSE 3000
 
 # Start the Nuxt application in production mode
 CMD ["node", ".output/server/index.mjs"]
