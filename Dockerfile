@@ -25,7 +25,7 @@ COPY . .
 RUN npm run build
 
 # Expose the port that Nuxt serves on (default is 80 now)
-EXPOSE 80
+EXPOSE 3000
 
 # Start the application using PM2
 CMD ["pm2-runtime", "ecosystem.config.cjs"]
